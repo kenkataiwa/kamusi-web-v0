@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 
-export default function Header() {
+export default function Kichwa() {
   return (
     <nav className="navbar sticky-top navbar-light bg-light">
       <div className="container">

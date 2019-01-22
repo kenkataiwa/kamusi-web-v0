@@ -1,38 +1,44 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
+import NahauMaanaMoja from "./NahauMaanaMoja";
+import NahauMaana from "./NahauMaana";
 
 class NahauMoja extends Component {
-  addToCart = () => {
-    console.log(this.props);
-  };
-  getStyle = () => {
-    if (this.props.nahauMoja.isNew) {
-      return {
-        // backgroundColor: "#f4f4aa"
-      };
-    }
-
-    return {
-      // backgroundColor: "#f4f4f4"
+    renderDefinitions = () => {
+        const definitionsCount = this.props.nahauMoja.meanings.length;
+        if (definitionsCount === 1)
+            return this.props.nahauMoja.meanings.map(maana => (
+                <NahauMaanaMoja key={maana.id} maana={maana}/>
+            ));
+        else if (definitionsCount > 1)
+            return (
+                <ol>
+                    <NahauMaana meanings={this.props.nahauMoja.meanings}/>
+                </ol>
+            );
+        // Catch for empty set as well
     };
-  };
-  render() {
-    const { id, name, url, imageUrl } = this.props.nahauMoja;
-    return (
-      <div className="product col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-        <a href={url} className="product-link">
-          <img className="product-img" alt="" />
-        </a>
-        <p data-product-id={id} className="product-name">
-          {name}
-        </p>
-      </div>
-    );
-  }
+
+    render() {
+        const {id, phrase} = this.props.nahauMoja;
+        return (
+            <div className="col-md-6 col-sm-12">
+                <div className="kamusi-item">
+                    <a href={"/nahau/" + id} className="title">
+                        {phrase}
+                    </a>
+                    <div className="type-definitions">
+                        {this.renderDefinitions()}
+                    </div>
+                </div>
+            </div>
+        );
+    }
 }
+
 // PropTypes
 NahauMoja.propTypes = {
-  nahauMoja: PropTypes.object.isRequired
+    nahauMoja: PropTypes.object.isRequired
 };
 
 export default NahauMoja;

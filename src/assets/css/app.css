@@ -16,23 +16,75 @@
   color: #555555 !important;
 }
 
-.neno {
-  color: #555555;
+.kamusi-search {
+  margin: 25px 0 20px;
 }
 
-.neno .neno {
-  width: 100%;
+.kamusi-search input {
+  border-radius: 4px;
+  background: #fdfdfd;
+  border: 2px solid #aaa;
 }
 
-.neno .neno-taarifa {
-  background-color: #fcfcfc;
-  font-size: 1.1em;
-  font-weight: 600;
-  overflow: hidden;
-  padding: 5px 2px 5px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  display: block;
+.section-header {
+  font-size: 2em;
+  color: #777;
+}
+
+.kamusi-item {
+  font-size: 14px;
+}
+.kamusi-item .title {
+  font-size: 21px;
+  font-weight: 500;
+}
+.kamusi-item .title.sm {
+  font-size: 16px;
+  font-weight: 400;
+}
+.kamusi-item .pronounce {
+  font-weight: 400;
+}
+.kamusi-item .type {
+  margin-top: 2px;
+  font-style: italic;
+  font-size: 95%;
+}
+.kamusi-item .type-definitions {
+  margin-bottom: 2px;
+  margin-left: 20px;
+}
+.kamusi-item ul, .kamusi-item ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 0 0 20px;
+}
+.kamusi-item ul li.no-style, .kamusi-item ol li.no-style {
+  list-style-type: none;
+}
+.kamusi-item .part {
+  margin-top: 2px;
+}
+.kamusi-item .part .synonyms {
+  color: #777;
+}
+.kamusi-item .part .synonyms span {
+  font-style: italic;
+}
+.kamusi-item .part .definition {
+  font-size: 14px;
+}
+.kamusi-item .part .example {
+  font-size: 14px;
+  color: #777;
+}
+
+.no-results {
+  text-align: center;
+  margin: 50px 20px;
+  font-size: 32px;
+  color: #777;
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=app.css.map */

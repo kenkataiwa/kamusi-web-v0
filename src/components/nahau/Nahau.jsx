@@ -12,7 +12,7 @@ class Nahau extends Component {
 
 // PropTypes
 Nahau.propTypes = {
-  Nahau: PropTypes.array.isRequired
+  nahau: PropTypes.array.isRequired
 };
 
 export default Nahau;
