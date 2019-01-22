@@ -1,0 +1,19 @@
+// Products
+.neno {
+  color: #555555;
+}
+
+.neno .neno {
+  width: 100%;
+}
+
+.neno .neno-taarifa {
+  background-color: #fcfcfc;
+  font-size: 1.1em;
+  font-weight: 600;
+  overflow: hidden;
+  padding: 5px 2px 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
