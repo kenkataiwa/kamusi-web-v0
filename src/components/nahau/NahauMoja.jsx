@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Link } from "react-router-dom";
 import Axios from "axios";
 import NahauMaanaMoja from "./NahauMaanaMoja";
 import NahauMaana from "./NahauMaana";
@@ -13,7 +14,8 @@ class NahauMoja extends Component {
     };
 
     componentDidMount() {
-        Axios.get("http://localhost/sample/kamusi/api/nahau-moja.json").then(
+        const { match: { params } } = this.props;
+        Axios.get(process.env.REACT_APP_API_URL + "/nahau/" + params.id).then(
             res => this.setState({nahau: res.data})
         );
     }
@@ -45,9 +47,9 @@ class NahauMoja extends Component {
                 <div className="container">
                     <div className="col-md-6 col-sm-12">
                         <div className="kamusi-item">
-                            <a href={"/nahau/" + id} className="title">
+                            <Link to={"/nahau/" + id} className="title">
                                 {phrase}
-                            </a>
+                            </Link>
                             <div className="type-definitions">
                                 {this.renderDefinitions()}
                             </div>

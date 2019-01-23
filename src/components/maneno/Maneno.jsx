@@ -1,18 +1,11 @@
 import React, {Component} from "react";
-import Axios from "axios";
+import {Link} from "react-router-dom";
 import ManenoOrodha from "./ManenoOrodha";
 import Kichwa from "../mpangilio/Kichwa";
 import Tafuta from "../mpangilio/Tafuta";
 import Sakafu from "../mpangilio/Sakafu";
-import {Link} from "react-router-dom";
 
 class Maneno extends Component {
-    componentDidMount() {
-        Axios.get("http://localhost/sample/kamusi/api/maneno.json").then(
-            res => this.setState({maneno: res.data})
-        );
-    }
-
     render() {
         return (
             <React.Fragment>

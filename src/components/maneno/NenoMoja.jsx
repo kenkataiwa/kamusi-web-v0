@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Link } from "react-router-dom";
 import Axios from "axios";
 import NenoMaanaMoja from "./NenoMaanaMoja";
 import NenoMaana from "./NenoMaana";
@@ -13,7 +14,8 @@ class NenoMoja extends Component {
     };
 
     componentDidMount() {
-        Axios.get("http://localhost/sample/kamusi/api/neno-moja.json").then(
+        const { match: { params } } = this.props;
+        Axios.get(process.env.REACT_APP_API_URL + "/maneno/" + params.id).then(
             res => this.setState({neno: res.data})
         );
     }
@@ -45,9 +47,9 @@ class NenoMoja extends Component {
                 <div className="container">
                     <div className="col-md-6 col-sm-12">
                         <div className="kamusi-item">
-                            <a href={"/neno/" + id} className="title">
+                            <Link to={"/neno/" + id} className="title">
                                 {word}
-                            </a>
+                            </Link>
                             <div className="pronounce">{this.state.neno.pronunciation}</div>
                         </div>
                         <div className="type-definitions">

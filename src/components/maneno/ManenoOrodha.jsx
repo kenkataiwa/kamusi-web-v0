@@ -9,12 +9,9 @@ class ManenoOrodha extends Component {
     };
 
     componentDidMount() {
-        Axios.get("http://localhost/sample/kamusi/api/maneno.json").then(
-            res => this.setState({maneno: res.data})
+        Axios.get(process.env.REACT_APP_API_URL + "/maneno").then(
+            res => this.setState({maneno: res.data._embedded.maneno})
         );
-        // Axios.get(process.env.REACT_APP_API_URL + "/maneno").then(
-        //     res => this.setState({ maneno: res.data._embeded.maneno })
-        // );
     }
 
     render() {

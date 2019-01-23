@@ -9,8 +9,8 @@ class NahauOrodha extends Component {
     };
 
     componentDidMount() {
-        Axios.get("http://localhost/sample/kamusi/api/nahau.json").then(
-            res => this.setState({nahau: res.data})
+        Axios.get(process.env.REACT_APP_API_URL + "/nahau").then(
+            res => this.setState({nahau: res.data._embedded.nahau})
         );
     }
 

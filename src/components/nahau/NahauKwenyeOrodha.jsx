@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import NahauMaanaMoja from "./NahauMaanaMoja";
 import NahauMaana from "./NahauMaana";
@@ -24,9 +25,9 @@ class NahauKwenyeOrodha extends Component {
         return (
             <div className="col-md-6 col-sm-12">
                 <div className="kamusi-item">
-                    <a href={"/nahau/" + id} className="title">
+                    <Link to={"/nahau/" + id} className="title">
                         {phrase}
-                    </a>
+                    </Link>
                     <div className="type-definitions">
                         {this.renderDefinitions()}
                     </div>

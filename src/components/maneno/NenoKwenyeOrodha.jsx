@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import NenoMaanaMoja from "./NenoMaanaMoja";
 import NenoMaana from "./NenoMaana";
@@ -24,9 +25,9 @@ class NenoKwenyeOrodha extends Component {
         return (
             <div className="col-md-6 col-sm-12">
                 <div className="kamusi-item">
-                    <a href={"/neno/" + id} className="title">
+                    <Link to={"/neno/" + id} className="title">
                         {word}
-                    </a>
+                    </Link>
                     <div className="pronounce">{this.props.neno.pronunciation}</div>
                 </div>
                 <div className="type-definitions">
