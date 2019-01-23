@@ -1,18 +1,30 @@
-import React, { Component } from "react";
-import NahauMoja from "./NahauMoja";
-import PropTypes from "prop-types";
+import React, {Component} from "react";
+import {Link} from "react-router-dom";
+import Kichwa from "../mpangilio/Kichwa";
+import Tafuta from "../mpangilio/Tafuta";
+import Sakafu from "../mpangilio/Sakafu";
+import NahauOrodha from "./NahauOrodha";
 
 class Nahau extends Component {
-  render() {
-    return this.props.nahau.map(nahauMoja => (
-      <NahauMoja key={nahauMoja.id} nahauMoja={nahauMoja} />
-    ));
-  }
+    render() {
+        return (
+            <React.Fragment>
+                <Kichwa/>
+                <Tafuta/>
+                <div className="container">
+                    <div>
+                        <Link to="/nahau">
+                            <h1 className="section-header">Nahau</h1>
+                        </Link>
+                    </div>
+                    <div className="row">
+                        <NahauOrodha/>
+                    </div>
+                </div>
+                <Sakafu/>
+            </React.Fragment>
+        );
+    }
 }
-
-// PropTypes
-Nahau.propTypes = {
-  nahau: PropTypes.array.isRequired
-};
 
 export default Nahau;

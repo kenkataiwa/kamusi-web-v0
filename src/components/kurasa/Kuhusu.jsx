@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/images/logo.png";
 
-export default function About() {
+export default function Kuhusu() {
   return (
     <div className="container">
       <div className="about">

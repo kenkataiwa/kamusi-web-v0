@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-export default class NotFound extends Component {
+export default class Haipatikani extends Component {
   state = {
     redirect: true
   };
