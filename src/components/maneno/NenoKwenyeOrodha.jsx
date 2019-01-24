@@ -29,9 +29,9 @@ class NenoKwenyeOrodha extends Component {
                         {word}
                     </Link>
                     <div className="pronounce">{this.props.neno.pronunciation}</div>
-                </div>
-                <div className="type-definitions">
-                    {this.renderDefinitions()}
+                    <div className="type-definitions">
+                        {this.renderDefinitions()}
+                    </div>
                 </div>
             </div>
         );

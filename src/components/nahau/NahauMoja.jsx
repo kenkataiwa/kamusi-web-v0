@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import Axios from "axios";
 import NahauMaanaMoja from "./NahauMaanaMoja";
 import NahauMaana from "./NahauMaana";
@@ -14,7 +14,7 @@ class NahauMoja extends Component {
     };
 
     componentDidMount() {
-        const { match: { params } } = this.props;
+        const {match: {params}} = this.props;
         Axios.get(process.env.REACT_APP_API_URL + "/nahau/" + params.id).then(
             res => this.setState({nahau: res.data})
         );
@@ -45,13 +45,15 @@ class NahauMoja extends Component {
                 <Kichwa/>
                 <Tafuta/>
                 <div className="container">
-                    <div className="col-md-6 col-sm-12">
-                        <div className="kamusi-item">
-                            <Link to={"/nahau/" + id} className="title">
-                                {phrase}
-                            </Link>
-                            <div className="type-definitions">
-                                {this.renderDefinitions()}
+                    <div className="row">
+                        <div className="col-md-6 col-sm-12">
+                            <div className="kamusi-item">
+                                <Link to={"/nahau/" + id} className="title">
+                                    {phrase}
+                                </Link>
+                                <div className="type-definitions">
+                                    {this.renderDefinitions()}
+                                </div>
                             </div>
                         </div>
                     </div>

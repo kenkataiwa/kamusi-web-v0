@@ -12,7 +12,7 @@
   line-height: 100%;
   margin: 0 0 0 5px;
   padding: 0;
-  font-size: 1.9em;
+  font-size: 30px;
   color: #555555 !important;
 }
 
@@ -33,6 +33,7 @@
 
 .kamusi-item {
   font-size: 14px;
+  margin-bottom: 5px;
 }
 .kamusi-item .title {
   font-size: 21px;
@@ -51,8 +52,7 @@
   font-size: 95%;
 }
 .kamusi-item .type-definitions {
-  margin-bottom: 2px;
-  margin-left: 20px;
+  margin: 0 0 2px 1px;
 }
 .kamusi-item ul, .kamusi-item ol {
   margin-top: 0;

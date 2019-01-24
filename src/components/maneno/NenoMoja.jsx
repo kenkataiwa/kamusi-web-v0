@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import Axios from "axios";
 import NenoMaanaMoja from "./NenoMaanaMoja";
 import NenoMaana from "./NenoMaana";
@@ -14,7 +14,7 @@ class NenoMoja extends Component {
     };
 
     componentDidMount() {
-        const { match: { params } } = this.props;
+        const {match: {params}} = this.props;
         Axios.get(process.env.REACT_APP_API_URL + "/maneno/" + params.id).then(
             res => this.setState({neno: res.data})
         );
@@ -45,15 +45,17 @@ class NenoMoja extends Component {
                 <Kichwa/>
                 <Tafuta/>
                 <div className="container">
-                    <div className="col-md-6 col-sm-12">
-                        <div className="kamusi-item">
-                            <Link to={"/neno/" + id} className="title">
-                                {word}
-                            </Link>
-                            <div className="pronounce">{this.state.neno.pronunciation}</div>
-                        </div>
-                        <div className="type-definitions">
-                            {this.renderDefinitions()}
+                    <div className="row">
+                        <div className="col-md-6 col-sm-12">
+                            <div className="kamusi-item">
+                                <Link to={"/neno/" + id} className="title">
+                                    {word}
+                                </Link>
+                                <div className="pronounce">{this.state.neno.pronunciation}</div>
+                            </div>
+                            <div className="type-definitions">
+                                {this.renderDefinitions()}
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 // Kamusi item
 .kamusi-item {
   font-size: 14px;
+  margin-bottom: 5px;
 
   .title {
     font-size: 21px;
@@ -23,8 +24,7 @@
   }
 
   .type-definitions {
-    margin-bottom: 2px;
-    margin-left: 20px;
+    margin: 0 0 2px 1px ;
   }
 
   ul, ol {
