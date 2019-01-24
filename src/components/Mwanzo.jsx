@@ -11,7 +11,6 @@ export default class Mwanzo extends Component {
         redirect: false
     };
 
-
     renderRedirect = () => {
         if (this.state.redirect) {
             return <Redirect to="/kuhusu"/>;

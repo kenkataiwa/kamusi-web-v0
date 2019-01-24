@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import NahauKwenyeOrodha from "./NahauKwenyeOrodha";
+import PropTypes from 'prop-types';
 import Axios from "axios";
 
 class NahauOrodha extends Component {
@@ -7,11 +8,20 @@ class NahauOrodha extends Component {
         redirect: false,
         nahau: []
     };
+    componentWillReceiveProps(nextProps){
+        if(nextProps.nahau !== this.props.nahau){
+            this.setState({nahau:nextProps.nahau});
+        }
+    }
 
     componentDidMount() {
-        Axios.get(process.env.REACT_APP_API_URL + "/nahau").then(
-            res => this.setState({nahau: res.data._embedded.nahau})
-        );
+        if (typeof this.props.nahau !== 'undefined') {
+            this.setState({nahau: this.props.nahau})
+        } else {
+            Axios.get(process.env.REACT_APP_API_URL + "/nahau").then(
+                res => this.setState({nahau: res.data._embedded.nahau})
+            );
+        }
     }
 
     render() {
@@ -20,5 +30,10 @@ class NahauOrodha extends Component {
         ));
     }
 }
+
+// PropTypes
+NahauOrodha.propTypes = {
+    nahau: PropTypes.array
+};
 
 export default NahauOrodha;

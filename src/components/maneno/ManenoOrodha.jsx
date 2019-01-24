@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import NenoKwenyeOrodha from "./NenoKwenyeOrodha";
+import PropTypes from 'prop-types';
 import Axios from "axios";
 
 class ManenoOrodha extends Component {
@@ -7,11 +8,20 @@ class ManenoOrodha extends Component {
         redirect: false,
         maneno: []
     };
+    componentWillReceiveProps(nextProps){
+        if(nextProps.maneno !== this.props.maneno){
+            this.setState({maneno:nextProps.maneno});
+        }
+    }
 
     componentDidMount() {
-        Axios.get(process.env.REACT_APP_API_URL + "/maneno").then(
-            res => this.setState({maneno: res.data._embedded.maneno})
-        );
+        if (typeof this.props.maneno !== 'undefined') {
+            this.setState({maneno: this.props.maneno});
+        } else {
+            Axios.get(process.env.REACT_APP_API_URL + "/maneno").then(
+                res => this.setState({maneno: res.data._embedded.maneno})
+            );
+        }
     }
 
     render() {
@@ -20,5 +30,10 @@ class ManenoOrodha extends Component {
         ));
     }
 }
+
+// PropTypes
+ManenoOrodha.propTypes = {
+    maneno: PropTypes.array
+};
 
 export default ManenoOrodha;
